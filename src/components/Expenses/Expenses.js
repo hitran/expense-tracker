@@ -6,18 +6,6 @@ import ExpensesList from "./ExpensesList";
 
 const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState("2020");
-  
-  let filteredInfoText = "2019, 2021, 2022";
-  
-  if (filteredYear === "2019") {
-    filteredInfoText = "2020, 2021, 2022";
-  } else if (filteredYear === "2021") {
-    filteredInfoText = "2019, 2020, 2022";
-  } else {
-    filteredInfoText = "2019, 2020, 2021";
-  }
-
-  const sampleText = "";
 
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
@@ -33,7 +21,6 @@ const Expenses = (props) => {
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}
         />
-        <p>Data for years {filteredInfoText} is hidden.</p>
         <ExpensesList items={filteredExpenses} />
       </Card>
     </div>
